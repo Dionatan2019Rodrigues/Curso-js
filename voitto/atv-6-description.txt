@@ -1,0 +1,65 @@
+Descrição: O custo normal do pacote de aulas de uma autoescola na cidade de
+Porto Seguro é 1800 reais, porém os gerentes estão criando uma
+promoção para atrair mais clientes:
+
+-> Caso a pessoa tenha entre 16 e 18 anos (exclusive), ela pode fazer uma
+matrícula antecipada com desconto de 20%.
+-> Clientes nessa condição só poderão dar início às aulas no dia
+seguinte ao completarem 18 anos;
+-> Clientes com menos de 16 anos não podem fazer a matrícula
+antecipada, logo não podem aproveitar a promoção
+-> Caso a pessoa tenha entre 18 e 40 anos (inclusive), ela pagará o preço
+normal, mas poderá iniciar as aulas imediatamente;
+-> Caso a pessoa tenha mais de 40 anos, ela recebe um desconto de
+40% e poderá iniciar as aulas imediatamente
+Crie um script para exibir uma mensagem para um cliente que quer se
+matricular na autoescola, informando:
+-> Se está apto ou não a fazer a matrícula;
+-> Caso esteja apto, qual o valor a pagar;
+-> Partindo do princípio que qualquer pessoa pode iniciar as aulas no
+dia seguinte após completarem 18 anos, caso essa data já tenha
+chegado, informar que ela já pode iniciar automaticamente, senão
+informar a data na qual a pessoa poderá iniciar.
+Requisitos:
+-> Você deve criar uma função que recebe o nome e a data de
+nascimento (no formato DD/MM/AAAA) da pessoa como parâmetros,
+sendo os dois parâmetros do tipo string;
+-> Valide o formato das entradas e informe erro caso não estejam no
+formato correto;
+-> Calcule a idade da pessoa a partir da data de nascimento;
+
+-> A função deve retornar uma mensagem para ser exibida em tela
+com uma saudação ao cliente e com as informações necessárias, de
+acordo com a descrição do problema.Descrição:
+O custo normal do pacote de aulas de uma autoescola na cidade de
+Porto Seguro é 1800 reais, porém os gerentes estão criando uma
+promoção para atrair mais clientes:
+-> Caso a pessoa tenha entre 16 e 18 anos (exclusive), ela pode fazer uma
+matrícula antecipada com desconto de 20%.
+-> Clientes nessa condição só poderão dar início às aulas no dia
+seguinte ao completarem 18 anos;
+-> Clientes com menos de 16 anos não podem fazer a matrícula
+antecipada, logo não podem aproveitar a promoção
+-> Caso a pessoa tenha entre 18 e 40 anos (inclusive), ela pagará o preço
+normal, mas poderá iniciar as aulas imediatamente;
+-> Caso a pessoa tenha mais de 40 anos, ela recebe um desconto de
+40% e poderá iniciar as aulas imediatamente
+Crie um script para exibir uma mensagem para um cliente que quer se
+matricular na autoescola, informando:
+-> Se está apto ou não a fazer a matrícula;
+-> Caso esteja apto, qual o valor a pagar;
+-> Partindo do princípio que qualquer pessoa pode iniciar as aulas no
+dia seguinte após completarem 18 anos, caso essa data já tenha
+chegado, informar que ela já pode iniciar automaticamente, senão
+informar a data na qual a pessoa poderá iniciar.
+Requisitos:
+-> Você deve criar uma função que recebe o nome e a data de
+nascimento (no formato DD/MM/AAAA) da pessoa como parâmetros,
+sendo os dois parâmetros do tipo string;
+-> Valide o formato das entradas e informe erro caso não estejam no
+formato correto;
+-> Calcule a idade da pessoa a partir da data de nascimento;
+
+-> A função deve retornar uma mensagem para ser exibida em tela
+com uma saudação ao cliente e com as informações necessárias, de
+acordo com a descrição do problema.

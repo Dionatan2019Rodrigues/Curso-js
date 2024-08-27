@@ -1,0 +1,61 @@
+
+Descrição:
+Crie um script para validar um CPF.
+Um CPF é um número composto de 11 dígitos, seguindo o formato
+XXX.XXX.XXX-XX, sendo que os dois últimos dígitos são dígitos
+verificadores.
+Considere o CPF 206.501.960-31 como exemplo. O primeiro dígito
+verificador é `3` e o segundo dígito verificador é `1`.
+Para que um CPF seja válido, duas condições devem ser atendidas:
+
+Primeira Condição:
+-> Liste os 9 primeiros dígitos do CPF. Para o CPF do exemplo: 2, 0, 6, 5,
+0, 1, 9, 6, 0
+-> Liste os dígitos de 10 a 2 de forma decrescente: 10, 9, 8, 7, 6, 5, 4, 3, 2
+-> Multiplique as duas sequências, dígito por dígito, e some o resultado.
+Para o CPF de exemplo:
+    --> SOMA = 2*10 + 0*9 + 6*8 + 5*7 + 0*6 + 1*5 + 9*4 + 6*3 + 0*2 = 162
+-> Multiplique o resultado da operação anterior por 10 e divida por 11,
+obtendo o resto dessa divisão. Para o CPF de exemplo:
+    --> OPERAÇÃO = 162 * 10 / 11 = 147.27 = 147 (RESTO 3)
+-> Caso o resto seja maior ou igual a 10, considere este valor como 0
+    --> No caso, 3 é menor que 10, então utilizamos o próprio valor 3
+-> Verifique se o valor final obtido é igual ao primeiro dígito verificador.
+    --> Se sim, vá para a próxima validação
+    --> Se não, o CPF é inválido
+    --> No nosso exemplo a condição seja verdadeira: 3 = 3, então vamos
+para a próxima condição.
+
+Segunda Condição:
+-> Repita os passos da primeira condição, considerando agora os 10
+primeiros dígitos e comparando o resultado final com o segundo
+dígito verificador
+-> Para o CPF de exemplo:
+    --> Multiplicando os 10 primeiros dígitos por uma sequência
+decrescente de 11 a 2:
+        ● SOMA = 2*11 + 0*10 + 6*9 + 5*8 + 0*7 + 1*6 + 9*5 + 6*4 + 0*3 + 3*2= 197
+    --> Multiplicando o resultado da soma por 10, dividindo por 11 e
+obtendo o resto da divisão:
+        ● OPERAÇÃO = 197 * 10 / 11 = 179.09 = 179 (RESTO 1)
+    --> Como o resto é menor que 10, assumimos o próprio valor 1
+    --> Verificando se o valor é igual ao segundo dígito verificador: 1 = 1
+    --> Como o resultado é verdadeiro, o CPF de exemplo é VÁLIDO
+        ● Caso contrário, o CPF seria INVÁLIDO
+
+Requisitos:
+-> A função para validar o CPF deve receber como parâmetro uma
+string
+    ● Caso o valor recebido não seja uma string, o resultado deverá ser
+CPF inválido
+-> O CPF deverá ser tratado, ou seja, ter pontos e traços (ou qualquer
+caracter não numérico) removidos caso existam
+    ● Dessa forma, se a entrada for 206.501.960-31, 20650196031 ou
+abc206.def501.ghi960-jk31 o resultado deve ser o mesmo
+-> Deverá ser verificado se a quantidade de dígitos (sem pontos e
+traços) é 11
+    ● Se não for, o resultado deverá ser CPF inválido
+-> CPFs como 000.000.000-00 ou 111.111.111-11, em que todos os dígitos
+são iguais, devem ser considerados como inválidos.
+-> Fazer a validação do CPF formatado conforme a descrição
+-> Exibir em tela se o CPF é válido ou não
+

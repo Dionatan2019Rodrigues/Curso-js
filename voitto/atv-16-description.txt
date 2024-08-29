@@ -1,0 +1,78 @@
+Descrição:
+Neste desafio Tech vamos criar um sistema de abertura de contas para
+o banco Voitto Digital. O fluxo de abertura de contas contém 3 etapas:
+    1. Recebimento dos dados básicos de cadastro;
+    2. Validação dos dados;
+    3. Ativação da conta e liberação de saldo e transações.
+
+Vejamos o detalhamento de cada etapa:
+Recebimento dos dados básicos de cadastro:
+Os dados necessários para cadastro são:
+    -> Nome completo (string);
+    -> Data de nascimento (string);
+    -> Documento:
+        -> Tipo (RG, CNH ou PASSAPORTE - string);
+        -> Número do documento (number);
+    -> Endereço:
+        -> CEP (number);
+        -> Estado (string);
+        -> Cidade (string);
+        -> Bairro (string);
+        -> Logradouro (string);
+        -> Número (number);
+        -> Complemento (string);
+    -> Tipo de cliente: (BRASILEIRO ou ESTRANGEIRO - string);
+    -> Renda mensal em reais (number);
+
+Validação dos dados:
+Nesta etapa faremos duas validações:
+
+    1. Em relação a data de nascimento:
+        ● o cliente deve ter 18 anos ou mais;
+    2. Em relação ao documento:
+        ● o tipo do documento deve ser RG, CNH ou PASSAPORTE;
+        ● o número de documento deve ser válido;
+
+Caso todas as condições sejam satisfeitas, vamos ativar a conta do
+cliente, atribuindo os seguintes atributos ao objeto:
+    -> Ativo: true;
+    -> Número da conta: number;
+    -> Saldo: 0;
+    -> Tipo de cartão: (string)
+Caso uma das condições não seja satisfeita, a ativação da conta não é
+realizada. Deve-se atribuir então o atributo:
+    -> Ativo: false;
+
+OBSERVAÇÃO: para determinar o tipo de cartão (quando a abertura da
+conta for aprovada), deve-se analisar a renda mensal do cliente, em
+reais:
+    ● Renda < R$10.000 → cartão STANDARD
+    ● Renda ≥ R$10.000 → cartão BLACK
+
+Ativação da conta e liberação de saldo e transações:
+Uma vez que a conta esteja ativa, o cliente pode realizar transações,
+removendo ou adicionando saldo, de acordo com as seguintes regras:
+    1. Adicionando saldo:
+        a. Deve-se informar o valor e a moeda:
+            i. Moedas aceitas: REAL, DOLAR, EURO;
+        b. Em caso de moedas estrangeiras (DOLAR ou EURO), deve-se converter o valor para REAL, tendo em vista que o saldo consta apenas na moeda brasileira;
+    2. Removendo saldo:
+        a. Todo saldo é feito em REAL, portanto não é necessário informar qual o tipo de moeda;
+        b. O cliente não pode fazer uma remoção maior do que o saldo da conta;
+    3. Ao realizar uma transação, deve-se atualizar o saldo em conta.
+
+Requisitos:
+    -> Crie um objeto cliente de acordo com os dados requisitados;
+    -> Crie um método para validar os dados do cliente, de acordo com as regras definidas:
+        --> Observações:
+            -> Para validar o número do documento, pode-se criar uma função que retorne um valor `true` ou `false` de maneira aleatória;
+            -> Para gerar o número da conta também pode-se usar uma função que gere um número aleatório entre 10.000 e 99.999;
+
+    -> Crie um método para adicionar saldo à conta do cliente:
+        --> Este método só deve acontecer caso o cliente esteja ATIVO;
+        --> Para converter o saldo nas moedas estrangeiras para REAL, pode-se utilizar valores arbitrários. Uma sugestão é avaliar a cotação do dia;
+
+    -> Crie um método para remover saldo da conta do cliente:
+        --> Este método só deve acontecer caso o cliente esteja ATIVO;
+        --> O cliente não pode sacar um valor maior do que possui em conta:
+            -> Isto é, o saldo da conta deve ser sempre maior ou igual a 0;

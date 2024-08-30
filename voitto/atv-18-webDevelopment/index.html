@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Voitto Class</title>
+</head>
+<body>
+    <header>
+        <h1>Voitto Class</h1>
+    </header>
+
+    <main>
+        <section id="my-students">
+            <h2>Meus alunos</h2>
+            <form id="filter">
+                <div class="input">
+                    <img src="./assets/search.svg" alt="" class="icon">
+                    <input
+                        type="text"
+                        name="name-filter"
+                        id="name-filter"
+                        placeholder="Buscar por nome"
+                        required
+                    />
+                </div>
+                <button type="submit">
+                    Buscar
+                </button>
+            </form>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Prova 1</th>
+                        <th>Prova 2</th>
+                        <th>Trabalho</th>
+                        <th>Nota Final</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Carlos</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>60</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>Marcos</td>
+                        <td>65</td>
+                        <td>90</td>
+                        <td>70</td>
+                        <td>75</td>
+                    </tr>
+                    <tr>
+                        <td>Ana</td>
+                        <td>100</td>
+                        <td>80</td>
+                        <td>90</td>
+                        <td>90</td>
+                    </tr>
+                    <tr>
+                        <td>Luiz</td>
+                        <td>45</td>
+                        <td>55</td>
+                        <td>80</td>
+                        <td>60</td>
+                    </tr>
+                    <tr>
+                        <td>Mariana</td>
+                        <td>90</td>
+                        <td>50</td>
+                        <td>55</td>
+                        <td>65</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="add-new-student">
+            <h2>Adicionar novo aluno</h2>
+            <form id="add-student">
+                <div class="input-container">
+                    <label for="student-name">Aluno</label>
+                    <div class="input">
+                        <img src="./assets/student.svg" alt="" class="icon">
+                        <input
+                            type="text"
+                            name="student-name"
+                            id="student-name"
+                            placeholder="Nome do aluno"
+                            required
+                        >
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="first-exam">Primeira prova</label>
+                    <div class="input">
+                        <img src="./assets/clipboard.svg" alt="" class="icon">
+                        <input
+                            type="number"
+                            name="first-exam"
+                            id="first-exam"
+                            placeholder="0"
+                            min="0"
+                            max="100"
+                            required
+                        >
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="second-exam">Segunda prova</label>
+                    <div class="input">
+                        <img src="./assets/clipboard.svg" alt="" class="icon">
+                        <input
+                            type="number"
+                            name="second-exam"
+                            id="second-exam"
+                            placeholder="0"
+                            min="0"
+                            max="100"
+                            required
+                        >
+                    </div>
+                </div>
+                <div class="input-container">
+                    <label for="project">Trabalho</label>
+                    <div class="input">
+                        <img src="./assets/clipboard.svg" alt="" class="icon">
+                        <input
+                            type="number"
+                            name="project"
+                            id="project"
+                            placeholder="0"
+                            min="0"
+                            max="100"
+                            required
+                        >
+                    </div>
+                </div>
+                <button type="submit">
+                    Adicionar
+                </button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

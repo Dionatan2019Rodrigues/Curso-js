@@ -42,6 +42,17 @@ students.forEach((student) => student.addStudentToTable());
 const addNewStudentForm = document.querySelector("#add-student");
 addNewStudentForm.addEventListener("submit", addNewStudent);
 
+function getStudentDataByForm() {
+  const addStudentForm = document.querySelector("form#add-student");
+
+  return {
+    studentName: addStudentForm["student-name"].value,
+    firstExam: addStudentForm["first-exam"].value,
+    secondExam: addStudentForm["second-exam"].value,
+    project: addStudentForm["project"].value,
+  };
+}
+
 function addNewStudent(event) {
   event.preventDefault();
 
@@ -58,33 +69,6 @@ function addNewStudent(event) {
   addStudentButton.disabled = true;
 }
 
-function getStudentDataByForm() {
-  const addStudentForm = document.querySelector("form#add-student");
-
-  return {
-    studentName: addStudentForm["student-name"].value,
-    firstExam: addStudentForm["first-exam"].value,
-    secondExam: addStudentForm["second-exam"].value,
-    project: addStudentForm["project"].value,
-  };
-}
-
-function handleInvalidStudentName(element) {
-  element.setCustomValidity("O nome é obrigatório");
-}
-function handleChangeStudentName(element) {
-  element.setCustomValidity("");
-  validateStudentData();
-}
-
-function handleInvalidGrade(element) {
-  element.setCustomValidity("A nota deve ser um número entre 0 e 100");
-}
-function handleChangeGrade(element) {
-  element.setCustomValidity("");
-  validateStudentData();
-}
-
 function validateStudentData() {
   const addStudentButton = document.querySelector("form#add-student button");
   const studentData = getStudentDataByForm();
@@ -93,4 +77,20 @@ function validateStudentData() {
   const hasAllData = studentDataValue.every((value) => !!value);
 
   addStudentButton.disabled = !hasAllData;
+}
+
+
+function handleInvalidStudentName(element) {
+  element.setCustomValidity("O nome é obrigatório");
+}
+function handleChangeStudentName(element) {
+  element.setCustomValidity("");
+  validateStudentData();
+}
+function handleInvalidGrade(element) {
+  element.setCustomValidity("A nota deve ser um número entre 0 e 100");
+}
+function handleChangeGrade(element) {
+  element.setCustomValidity("");
+  validateStudentData();
 }

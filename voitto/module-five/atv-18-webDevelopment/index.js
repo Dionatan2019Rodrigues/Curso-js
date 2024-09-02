@@ -3,9 +3,9 @@ class Student {
 
   constructor(name, firstExam, secondExam, project) {
     this.name = name;
-    this.firstExam = firstExam;
-    this.secondExam = secondExam;
-    this.project = project;
+    this.firstExam = Number(firstExam);
+    this.secondExam = Number(secondExam);
+    this.project = Number(project);
   }
   get finalGrade() {
     return ((this.firstExam + this.secondExam + this.project) / 3).toFixed(2);
@@ -38,3 +38,30 @@ const students = [
 ];
 
 students.forEach((student) => student.addStudentToTable());
+
+const addNewStudentForm = document.querySelector("#add-student");
+addNewStudentForm.addEventListener("submit", addNewStudent);
+
+function addNewStudent(event) {
+  event.preventDefault();
+
+  const studentName = getInputValueById("student-name");
+  const firstExam = getInputValueById("first-exam");
+  const secondExam = getInputValueById("second-exam");
+  const project = getInputValueById("project");
+
+  const newStudent = new Student(studentName, firstExam, secondExam, project);
+
+  newStudent.addStudentToTable();
+
+  clearForm(event.target);
+}
+
+function getInputValueById(inputId) {
+  return document.getElementById(inputId).value;
+}
+
+function clearForm(formElement) {
+  const inputElement = formElement.querySelectorAll("input");
+  inputElement.forEach((input) => (input.value = null));
+}

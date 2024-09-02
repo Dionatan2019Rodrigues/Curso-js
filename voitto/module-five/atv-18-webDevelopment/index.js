@@ -45,6 +45,8 @@ addNewStudentForm.addEventListener("submit", addNewStudent);
 function addNewStudent(event) {
   event.preventDefault();
 
+  const addStudentButton = document.querySelector("form#add-student button");
+
   const { studentName, firstExam, secondExam, project } =
     getStudentDataByForm();
 
@@ -52,36 +54,27 @@ function addNewStudent(event) {
 
   newStudent.addStudentToTable();
 
-  clearForm(event.target);
-}
-
-function getInputValueById(inputId) {
-  return document.getElementById(inputId).value;
+  event.target.reset();
+  addStudentButton.disabled = true;
 }
 
 function getStudentDataByForm() {
-    const addStudentForm = document.querySelector("form#add-student");
-  
-    return {
-      studentName: addStudentForm["student-name"].value,
-      firstExam: addStudentForm["first-exam"].value,
-      secondExam: addStudentForm["second-exam"].value,
-      project: addStudentForm["project"].value,
-    };
-  }
+  const addStudentForm = document.querySelector("form#add-student");
 
-function clearForm(formElement) {
-  const inputElement = formElement.querySelectorAll("input");
-  inputElement.forEach((input) => (input.value = null));
+  return {
+    studentName: addStudentForm["student-name"].value,
+    firstExam: addStudentForm["first-exam"].value,
+    secondExam: addStudentForm["second-exam"].value,
+    project: addStudentForm["project"].value,
+  };
 }
-
-
 
 function handleInvalidStudentName(element) {
   element.setCustomValidity("O nome é obrigatório");
 }
 function handleChangeStudentName(element) {
   element.setCustomValidity("");
+  validateStudentData();
 }
 
 function handleInvalidGrade(element) {
@@ -89,4 +82,15 @@ function handleInvalidGrade(element) {
 }
 function handleChangeGrade(element) {
   element.setCustomValidity("");
+  validateStudentData();
+}
+
+function validateStudentData() {
+  const addStudentButton = document.querySelector("form#add-student button");
+  const studentData = getStudentDataByForm();
+  const studentDataValue = Object.values(studentData);
+
+  const hasAllData = studentDataValue.every((value) => !!value);
+
+  addStudentButton.disabled = !hasAllData;
 }

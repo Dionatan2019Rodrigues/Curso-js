@@ -45,10 +45,8 @@ addNewStudentForm.addEventListener("submit", addNewStudent);
 function addNewStudent(event) {
   event.preventDefault();
 
-  const studentName = getInputValueById("student-name");
-  const firstExam = getInputValueById("first-exam");
-  const secondExam = getInputValueById("second-exam");
-  const project = getInputValueById("project");
+  const { studentName, firstExam, secondExam, project } =
+    getStudentDataByForm();
 
   const newStudent = new Student(studentName, firstExam, secondExam, project);
 
@@ -60,6 +58,17 @@ function addNewStudent(event) {
 function getInputValueById(inputId) {
   return document.getElementById(inputId).value;
 }
+
+function getStudentDataByForm() {
+    const addStudentForm = document.querySelector("form#add-student");
+  
+    return {
+      studentName: addStudentForm["student-name"].value,
+      firstExam: addStudentForm["first-exam"].value,
+      secondExam: addStudentForm["second-exam"].value,
+      project: addStudentForm["project"].value,
+    };
+  }
 
 function clearForm(formElement) {
   const inputElement = formElement.querySelectorAll("input");

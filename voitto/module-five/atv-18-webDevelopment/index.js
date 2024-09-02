@@ -19,7 +19,8 @@ class Student {
         <td>${this.firstExam}</td>
         <td>${this.secondExam}</td>
         <td>${this.project}</td>
-        <td>${this.finalGrade}</
+        <td>${this.finalGrade}</td>
+        <td><img id="deleteButton" src='./assets/delete.svg' style="color: #000000"></td>
     `;
 
     studentsTable.append(newStudent);
@@ -41,6 +42,11 @@ students.forEach((student) => student.addStudentToTable());
 
 const addNewStudentForm = document.querySelector("#add-student");
 addNewStudentForm.addEventListener("submit", addNewStudent);
+
+const studentRows = document.querySelectorAll("tr td img#deleteButton");
+studentRows.forEach((row) =>
+  row.addEventListener("click", handleRemoveStudent)
+);
 
 function getStudentDataByForm() {
   const addStudentForm = document.querySelector("form#add-student");
@@ -68,6 +74,9 @@ function addNewStudent(event) {
   event.target.reset();
   addStudentButton.disabled = true;
 }
+function handleRemoveStudent(event) {
+  event.target.parentNode.parentNode.remove();
+}
 
 function validateStudentData() {
   const addStudentButton = document.querySelector("form#add-student button");
@@ -78,7 +87,6 @@ function validateStudentData() {
 
   addStudentButton.disabled = !hasAllData;
 }
-
 
 function handleInvalidStudentName(element) {
   element.setCustomValidity("O nome é obrigatório");

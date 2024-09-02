@@ -20,7 +20,7 @@ class Student {
         <td>${this.secondExam}</td>
         <td>${this.project}</td>
         <td>${this.finalGrade}</td>
-        <td><img id="deleteButton" src='./assets/delete.svg' style="color: #000000"></td>
+        <td><img class="deleteButton" src='./assets/delete.svg' style="color: #000000"></td>
     `;
 
     studentsTable.append(newStudent);
@@ -43,7 +43,7 @@ students.forEach((student) => student.addStudentToTable());
 const addNewStudentForm = document.querySelector("#add-student");
 addNewStudentForm.addEventListener("submit", addNewStudent);
 
-const studentRows = document.querySelectorAll("tr td img#deleteButton");
+const studentRows = document.querySelectorAll("tr td img.deleteButton");
 studentRows.forEach((row) =>
   row.addEventListener("click", handleRemoveStudent)
 );
@@ -68,7 +68,6 @@ function addNewStudent(event) {
     getStudentDataByForm();
 
   const newStudent = new Student(studentName, firstExam, secondExam, project);
-
   newStudent.addStudentToTable();
 
   event.target.reset();

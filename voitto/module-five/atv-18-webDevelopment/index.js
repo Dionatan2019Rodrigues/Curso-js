@@ -65,3 +65,19 @@ function clearForm(formElement) {
   const inputElement = formElement.querySelectorAll("input");
   inputElement.forEach((input) => (input.value = null));
 }
+
+
+
+function handleInvalidStudentName(element) {
+  element.setCustomValidity("O nome é obrigatório");
+}
+function handleChangeStudentName(element) {
+  element.setCustomValidity("");
+}
+
+function handleInvalidGrade(element) {
+  element.setCustomValidity("A nota deve ser um número entre 0 e 100");
+}
+function handleChangeGrade(element) {
+  element.setCustomValidity("");
+}

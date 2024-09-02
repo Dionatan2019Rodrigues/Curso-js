@@ -47,7 +47,7 @@
             </tr>
           </thead>
           <tbody>
-          <!-- add by javaScript -->
+            <!-- add by javaScript -->
           </tbody>
         </table>
       </section>
@@ -65,6 +65,8 @@
                 id="student-name"
                 placeholder="Nome do aluno"
                 required
+                oninput="handleChangeStudentName(this)"
+                oninvalid="handleInvalidStudentName(this)"
               />
             </div>
           </div>
@@ -80,6 +82,8 @@
                 min="0"
                 max="100"
                 required
+                oninput="handleChangeGrade(this)"
+                oninvalid="handleInvalidGrade(this)"
               />
             </div>
           </div>
@@ -95,6 +99,8 @@
                 min="0"
                 max="100"
                 required
+                oninput="handleChangeGrade(this)"
+                oninvalid="handleInvalidGrade(this)"
               />
             </div>
           </div>
@@ -110,10 +116,12 @@
                 min="0"
                 max="100"
                 required
+                oninput="handleChangeGrade(this)"
+                oninvalid="handleInvalidGrade(this)"
               />
             </div>
           </div>
-          <button type="submit">Adicionar</button>
+          <button type="submit" disabled>Adicionar</button>
         </form>
       </section>
     </main>

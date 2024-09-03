@@ -5,3 +5,19 @@
   padding: 0;
   box-sizing: border-box;
 }
+header {
+  width: 100vw;
+  height: 15vh;
+  background-color: rgb(155, 202, 186);
+  color: #eee;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header #contato,
+nav {
+  display: flex;
+  padding: 0 40px;
+  gap: 20px;
+}

@@ -27,7 +27,7 @@ class Student {
     removeStudent();
   }
 }
-
+// inicio:Área que corresponde como uma main do projeto
 const students = [
   new Student("Carlos", 100, 50, 60),
   new Student("Marcos", 65, 90, 70),
@@ -41,14 +41,22 @@ const students = [
 
 students.forEach((student) => student.addStudentToTable());
 
-const addNewStudentForm = document.querySelector("#add-student");
+const addNewStudentForm = document.querySelector("form#add-student");
 addNewStudentForm.addEventListener("submit", addNewStudent);
+
+const filterStudentForm = document.querySelector("form#filter");
+filterStudentForm.addEventListener("submit", filterStudentByName);
+
+// fim: Área da main
 
 function removeStudent() {
   const studentRows = document.querySelectorAll("tr td img.deleteButton");
   studentRows.forEach((row) =>
     row.addEventListener("click", handleRemoveStudent)
   );
+}
+function handleRemoveStudent(event) {
+  event.target.parentNode.parentNode.remove();
 }
 
 function getStudentDataByForm() {
@@ -76,8 +84,21 @@ function addNewStudent(event) {
   event.target.reset();
   addStudentButton.disabled = true;
 }
-function handleRemoveStudent(event) {
-  event.target.parentNode.parentNode.remove();
+function filterStudentByName(event) {
+  event.preventDefault();
+  const inputName = event.target["name-filter"].value;
+  const filterExpression = new RegExp(inputName, "i");
+  const students = document.querySelectorAll("td:first-child");
+
+  students.forEach((student) => {
+    const studentName = student.innerText;
+
+    if (filterExpression.test(studentName)) {
+      student.parentNode.classList.remove("hidden");
+    } else {
+      student.parentNode.classList.add("hidden");
+    }
+  });
 }
 
 function validateStudentData() {

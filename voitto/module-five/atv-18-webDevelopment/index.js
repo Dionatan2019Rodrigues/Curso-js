@@ -24,6 +24,7 @@ class Student {
     `;
 
     studentsTable.append(newStudent);
+    removeStudent();
   }
 }
 
@@ -43,10 +44,12 @@ students.forEach((student) => student.addStudentToTable());
 const addNewStudentForm = document.querySelector("#add-student");
 addNewStudentForm.addEventListener("submit", addNewStudent);
 
-const studentRows = document.querySelectorAll("tr td img.deleteButton");
-studentRows.forEach((row) =>
-  row.addEventListener("click", handleRemoveStudent)
-);
+function removeStudent() {
+  const studentRows = document.querySelectorAll("tr td img.deleteButton");
+  studentRows.forEach((row) =>
+    row.addEventListener("click", handleRemoveStudent)
+  );
+}
 
 function getStudentDataByForm() {
   const addStudentForm = document.querySelector("form#add-student");

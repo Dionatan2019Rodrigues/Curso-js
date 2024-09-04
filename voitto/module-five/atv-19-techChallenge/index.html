@@ -12,6 +12,7 @@
     <title>Dashboard do Dionatan</title>
   </head>
   <body>
+    <!--TODO: redimencionar arquivo da imagem do usuário -->
     <header>
       <div id="contato">
         <img src="./assets/usuario.jpg" alt="foto do usuário" />
@@ -40,6 +41,7 @@
       </nav>
     </header>
     <main>
+      <!--FIXME: ajustar width dos componentes da section-projects-->
       <section id="section-projects">
         <div id="header-section-projects">
           <h2>Desenvolvimento de projetos</h2>
@@ -65,6 +67,7 @@
               <th>Status</th>
             </tr>
           </thead>
+          <tbody></tbody>
         </table>
         <form>
           <input
@@ -81,13 +84,13 @@
           />
           <input type="date" name="date-project" id="date-project" />
           <select name="status" id="select-status">
-            <option value="status">Status</option>
+            <option value="status" disabled selected>Status</option>
             <option value="desenvolvendo">Desenvolvendo</option>
             <option value="concluido">Concluído</option>
             <option value="congelado">Congelado</option>
             <option value="atrasado">Atrasado</option>
           </select>
-          <button type="submit">Adicionar</button>
+          <button type="submit" disabled>Adicionar</button>
         </form>
       </section>
       <section id="section-tasks"></section>

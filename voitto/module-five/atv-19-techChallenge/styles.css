@@ -1,4 +1,26 @@
-/* TODO: paleta de cores  and fonts */
+@charset "UTF-8";
+/* "Baloo Bhai 2", system-ui */
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap");
+
+:root {
+  --black: #000000;
+  --blue-300: rgb(177, 232, 238);
+  --blue-500: rgb(18, 163, 180);
+  --gray-300: #fffdfd;
+  --gray-400: #d9d9d9;
+  --gray-500: rgba(221, 221, 221, 0.615);
+  --gray-700: #313336;
+  --green-300: rgb(200, 236, 168);
+  --green-500: rgb(118, 187, 57);
+  --green-700: #30cd0d;
+  --orange-500: #fa6e0a;
+  --red-300: rgb(243, 156, 146);
+  --red-500: rgb(206, 64, 48);
+  --yellow-300: rgb(254, 236, 166);
+  --yellow-500: rgb(215, 154, 13);
+  --white: #ffffff;
+  font-size: 62.5%;
+}
 
 * {
   margin: 0;
@@ -8,8 +30,8 @@
 header {
   width: 100vw;
   height: 15vh;
-  background-color: rgb(155, 202, 186);
-  color: #eee;
+  background-color: var(--gray-700);
+  color: var(--gray-300);
   display: flex;
   flex-direction: row;
   justify-content: space-between;

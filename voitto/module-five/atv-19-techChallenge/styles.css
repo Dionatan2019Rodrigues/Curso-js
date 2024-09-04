@@ -84,9 +84,34 @@ nav div a #img-task {
 nav div a #img-project {
   width: 20px;
 }
-main #section-projects{
-  height: 120vh;
-  background-color: #d9d9d9;
+main #section-projects {
+  padding: 35px 30px;
+  width: 100vw;
+  background-color: var(--green-300);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+main #section-projects #header-section-projects h2 {
+  font-size: 3em;
+}
+main #section-projects #header-section-projects #computers {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+main #section-projects #header-section-projects #computers img{
+  width: 26px;
+  height: 26px;
+  padding: 5px;
+}
+.focused {
+  background-color: var(--orange-500);
+  border-radius: 50%;
+}
+main #section-projects #header-section-projects p {
+  font-size: 2em;
 }
 main #section-tasks{
   height: 120vh;

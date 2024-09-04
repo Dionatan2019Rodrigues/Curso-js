@@ -28,16 +28,69 @@
               src="assets/bars-progress.svg"
               alt="Projetos"
             />
-        <p>Projetos</p>
+            <p>Projetos</p>
           </a>
         </div>
         <div>
           <a href="#section-tasks">
             <img id="img-task" src="./assets/task.svg" alt="tarefas" />
-        <p>Tarefas</p>
+            <p>Tarefas</p>
           </a>
         </div>
       </nav>
     </header>
+    <main>
+      <section id="section-projects">
+        <div id="header-section-projects">
+          <h2>Desenvolvimento de projetos</h2>
+          <div id="computers">
+            <p>Ordenar por nome:</p>
+            <img
+              src="./assets/sort-ascending.svg"
+              alt="icon ordem crescente"
+              class="focused"
+            />
+            <img
+              src="./assets/sort-descending.svg"
+              alt="icon ordem decrescente"
+            />
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Projeto</th>
+              <th>Responsável</th>
+              <th>Data de Início</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+        </table>
+        <form>
+          <input
+            type="text"
+            name="nome-project"
+            id="nome-project"
+            placeholder="Nome do projeto"
+          />
+          <input
+            type="text"
+            name="responsible"
+            id="responsible"
+            placeholder="Responsável"
+          />
+          <input type="date" name="date-project" id="date-project" />
+          <select name="status" id="select-status">
+            <option value="status">Status</option>
+            <option value="desenvolvendo">Desenvolvendo</option>
+            <option value="concluido">Concluído</option>
+            <option value="congelado">Congelado</option>
+            <option value="atrasado">Atrasado</option>
+          </select>
+          <button type="submit">Adicionar</button>
+        </form>
+      </section>
+      <section id="section-tasks"></section>
+    </main>
   </body>
 </html>

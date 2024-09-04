@@ -10,6 +10,7 @@
   --gray-400: #d9d9d9;
   --gray-500: rgba(221, 221, 221, 0.615);
   --gray-700: #313336;
+  --gray-shadow: #0000007e;
   --green-300: rgb(200, 236, 168);
   --green-500: rgb(118, 187, 57);
   --green-700: #30cd0d;
@@ -85,7 +86,7 @@ nav div a #img-task {
 nav div a #img-project {
   width: 20px;
 }
-main #section-projects {
+.sections {
   padding: 35px 2vw 20px 2vw;
   background-color: var(--gray-300);
   display: flex;
@@ -96,7 +97,7 @@ main #section-projects {
   margin: 10px 5px;
   box-shadow: 1px 1px 40px var(--gray-400);
 }
-main #section-projects #header-section-projects h2 {
+h2 {
   font-size: 3em;
 }
 main .sections #header-section-projects #computers {
@@ -117,7 +118,7 @@ main .sections #header-section-projects #computers img:hover {
 .focused {
   background-color: var(--orange-500);
   border-radius: 50%;
-  box-shadow: 0px 0px 10px #000000;
+  box-shadow: 0px 0px 8px var(--gray-shadow);
 }
 main .sections #header-section-projects p {
   font-size: 2em;

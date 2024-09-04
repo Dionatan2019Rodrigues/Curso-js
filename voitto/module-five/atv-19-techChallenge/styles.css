@@ -174,7 +174,8 @@ main form {
   flex-direction: column;
   gap: 1.6rem;
 }
-main form input, select{
+main form input,
+select {
   border: solid 2px var(--black);
   border-radius: 5px;
   padding: 5px;
@@ -182,8 +183,11 @@ main form input, select{
 }
 main form button {
   width: 100%;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 1.8rem;
 }
-main form button:disabled{
+main form button:disabled {
   cursor: not-allowed;
 }
 

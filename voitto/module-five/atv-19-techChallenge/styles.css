@@ -29,6 +29,7 @@
   box-sizing: border-box;
   font-family: "Baloo Bhai 2", system-ui;
 }
+/*FIXME: corrigir scrool vertical de sections*/
 html {
   scroll-behavior: smooth;
 }
@@ -206,13 +207,12 @@ main form button:disabled {
 }
 
 @media (min-width: 632px) {
-
   main form {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   main form button {
-      grid-column-end: span 2;
+    grid-column-end: span 2;
   }
 }

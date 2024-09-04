@@ -145,6 +145,29 @@ th:first-child {
 th:last-child {
   border-top-right-radius: 8px;
 }
+/*FIXME: corrigir padding da class tag*/
+.tag {
+  padding: 0.4rem 1.2rem;
+  border-radius: 30px;
+  font-weight: 700;
+}
+
+.desenvolvendo {
+  background-color: var(--yellow-300);
+  color: var(--yellow-500);
+}
+.concluido {
+  background-color: var(--green-300);
+  color: var(--green-500);
+}
+.congelado {
+  background-color: var(--blue-300);
+  color: var(--blue-500);
+}
+.atrasado {
+  background-color: var(--red-300);
+  color: var(--red-500);
+}
 main form {
   width: 95vw;
   display: flex;

@@ -26,6 +26,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Baloo Bhai 2", system-ui;
+}
+html {
+  scroll-behavior: smooth;
 }
 header {
   width: 100vw;
@@ -37,9 +41,54 @@ header {
   justify-content: space-between;
   align-items: center;
 }
-header #contato,
+header #contato {
+  display: flex;
+  padding: 0 40px;
+  gap: 20px;
+}
+header #contato img {
+  width: 56px;
+  height: 56px;
+  padding: 2px;
+  border: solid var(--orange-500) 2px;
+  border-radius: 50%;
+}
+header #contato div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header #contato div #nome {
+  font-size: 1.5em;
+  font-weight: bolder;
+}
+header #contato div #email {
+  font-size: 1.5em;
+}
 nav {
   display: flex;
   padding: 0 40px;
   gap: 20px;
+  font-size: 2em;
+  font-weight: 100;
+}
+nav div a {
+  display: flex;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--gray-300);
+}
+nav div a #img-task {
+  width: 16px;
+}
+nav div a #img-project {
+  width: 20px;
+}
+main #section-projects{
+  height: 120vh;
+  background-color: #d9d9d9;
+}
+main #section-tasks{
+  height: 120vh;
+  background-color: #d9d9d9;
 }

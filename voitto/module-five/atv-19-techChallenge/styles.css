@@ -154,13 +154,11 @@ th:first-child {
 th:last-child {
   border-top-right-radius: 8px;
 }
-/*FIXME: corrigir padding da class tag*/
 .tag {
   padding: 0.4rem 1.2rem;
   border-radius: 30px;
   font-weight: 700;
 }
-
 .desenvolvendo {
   background-color: var(--yellow-300);
   color: var(--yellow-500);

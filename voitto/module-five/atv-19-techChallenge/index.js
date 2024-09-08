@@ -57,4 +57,27 @@ const tasks = [
 projects.forEach((project) => project.AddProjectToTable());
 tasks.forEach((task) => task.AddTaskToForm());
 
+const addNewTaskForm = document.querySelector("form#add-tasks");
+addNewTaskForm.addEventListener("submit", addNewTask);
+
 // Fim da área que corresponde a main
+
+// Adiciona nova tarefa na lista e limpa formulario de inserção
+function addNewTask(event) {
+  event.preventDefault();
+
+  const addTaskButton = document.querySelector("#submit-form-tasks button");
+  const valueTaskInput = getTaskDataByForm("task-input");
+
+  const newTask = new Task(valueTaskInput);
+  newTask.AddTaskToForm();
+  clearForm(event.target);
+}
+function getTaskDataByForm(inputId) {
+  return document.getElementById(inputId).value;
+}
+function clearForm(formElement) {
+  const inputElement = formElement.querySelectorAll("input");
+  inputElement.forEach((input) => (input.value = null));
+}
+// fim (add new task in the list and clear insertion form)

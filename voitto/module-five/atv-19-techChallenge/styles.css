@@ -220,6 +220,12 @@ main form button:disabled {
 #submit-form-tasks {
   display: flex;
 }
+#submit-form-tasks input {
+  width: 80vw;
+}
+#submit-form-tasks button {
+  width: 20vw;
+}
 
 @media (min-width: 632px) {
   

@@ -31,10 +31,13 @@
 }
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 9.6rem;
 }
 header {
-  position: sticky;
-  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 15vh;
   background-color: var(--gray-700);
   color: var(--gray-300);
@@ -86,7 +89,13 @@ nav div a #img-task {
 nav div a #img-project {
   width: 20px;
 }
+main {
+  margin: 8rem 0 0;
+  padding: 1.6rem 0.8rem;
+}
 .sections {
+  width: 100%;
+  width: 100%;
   padding: 35px 2vw 20px 2vw;
   background-color: var(--gray-300);
   display: flex;
@@ -125,7 +134,6 @@ main .sections #header-section-projects p {
 }
 main table {
   border-collapse: collapse;
-  width: 95vw;
 }
 main table * {
   font-size: 1.4rem;
@@ -168,8 +176,15 @@ th:last-child {
   background-color: var(--red-300);
   color: var(--red-500);
 }
+#section-project {
+  width: 100%;
+}
+main form,
+main table {
+  margin: 0 auto;
+  width: 100%; /* Ensure full width within section */
+}
 main form {
-  width: 95vw;
   display: flex;
   flex-direction: column;
   gap: 1.6rem;
@@ -182,10 +197,10 @@ select {
   font-size: 1.8rem;
 }
 main form button {
-  width: 100%;
   padding: 10px;
   font-weight: bold;
   font-size: 1.8rem;
+  width: 100%;
 }
 main form button:disabled {
   cursor: not-allowed;

@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* "Baloo Bhai 2", system-ui */
+/* font-family: "Baloo Bhai 2", system-ui;*/
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400..800&display=swap");
 
 :root {
@@ -39,35 +39,37 @@ header {
   left: 0;
   right: 0;
   height: 15vh;
+
   background-color: var(--gray-700);
   color: var(--gray-300);
+
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
-header #contato {
+#contato {
   display: flex;
   padding: 0 40px;
   gap: 20px;
 }
-header #contato img {
+#contato img {
   width: 56px;
   height: 56px;
   padding: 2px;
   border: solid var(--orange-500) 2px;
   border-radius: 50%;
 }
-header #contato div {
+#contato div {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-header #contato div #nome {
+#nome {
   font-size: 1.5em;
   font-weight: bolder;
 }
-header #contato div #email {
+#email {
   font-size: 1.5em;
 }
 nav {
@@ -83,10 +85,10 @@ nav div a {
   text-decoration: none;
   color: var(--gray-300);
 }
-nav div a #img-task {
+#img-task {
   width: 16px;
 }
-nav div a #img-project {
+#img-project {
   width: 20px;
 }
 main {
@@ -94,7 +96,6 @@ main {
   padding: 1.6rem 0.8rem;
 }
 .sections {
-  width: 100%;
   width: 100%;
   padding: 35px 2vw 20px 2vw;
   background-color: var(--gray-300);
@@ -109,17 +110,17 @@ main {
 h2 {
   font-size: 3em;
 }
-main .sections #header-section-projects #computers {
+#computers {
   display: flex;
   gap: 3px;
   align-items: center;
 }
-main .sections #header-section-projects #computers img {
+#computers img {
   width: 26px;
   height: 26px;
   padding: 5px;
 }
-main .sections #header-section-projects #computers img:hover {
+#computers img:hover {
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -129,7 +130,7 @@ main .sections #header-section-projects #computers img:hover {
   border-radius: 50%;
   box-shadow: 0px 0px 8px var(--gray-shadow);
 }
-main .sections #header-section-projects p {
+#header-section-projects p {
   font-size: 2em;
 }
 main table {
@@ -221,6 +222,7 @@ main form button:disabled {
 }
 
 @media (min-width: 632px) {
+  
   main form {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

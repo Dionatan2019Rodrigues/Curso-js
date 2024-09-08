@@ -215,6 +215,10 @@ main form button:disabled {
 #add-tasks div {
   border-bottom: 1px solid var(--gray-400);
 }
+input:checked ~ label {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
 #submit-form-tasks {
   display: flex;
 }

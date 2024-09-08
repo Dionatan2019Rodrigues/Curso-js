@@ -12,13 +12,12 @@
     <title>Dashboard do Dionatan</title>
   </head>
   <body>
-    <!--FIXME: remover scrool horizontal da página-->
     <header>
       <div id="contato">
         <img src="./assets/user.jpg" alt="foto do usuário" />
         <div>
-          <p id="nome">Dionatan Rodrigues</p>
-          <p id="email">derodrigues@inf.ufsm.br</p>
+          <p class="esconde" id="nome">Dionatan Rodrigues</p>
+          <p class="esconde"id="email">derodrigues@inf.ufsm.br</p>
         </div>
       </div>
       <nav>
@@ -29,19 +28,18 @@
               src="assets/bars-progress.svg"
               alt="imagem-projeto"
             />
-            <p>Projetos</p>
+            <span class="esconde">Projetos</span>
           </a>
         </div>
         <div>
           <a href="#section-tasks">
             <img id="img-task" src="./assets/task.svg" alt="imagem-tarefa" />
-            <p>Tarefas</p>
+            <span class="esconde">Tarefas</span>
           </a>
         </div>
       </nav>
     </header>
     <main>
-      <!--FIXME: ajustar width dos componentes da section-projects-->
       <section class="sections" id="section-projects">
         <div id="header-section-projects">
           <h2>Desenvolvimento de projetos</h2>
